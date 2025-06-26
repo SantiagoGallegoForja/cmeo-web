@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMEO - Especialistas</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+<body>
+
+    <header class="bg-white shadow-md fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="/" class="flex-shrink-0">
+                    <img src="assets/logo.png" alt="Logo" class="h-[4rem] w-auto" />
+                </a>
+
+                <!-- Menú Desktop -->
+                <nav class="hidden md:flex space-x-6 items-center">
+                    <a href="/#" class="nav-link">Inicio</a>
+                    <a href="#especialistas" class="nav-link">Especialistas</a>
+                    <a href="/services.html" class="nav-link">Servicios</a>
+                    <a href="/about-us.html" class="nav-link">Sobre nosotros</a>
+                    <a href="/contacto.html" class="nav-link">Contacto</a>
+                    <a href=""
+                        class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition">
+                        Agenda tu cita
+                    </a>
+                </nav>
+
+                <!-- Botón menú móvil -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu"
+            class="md:hidden fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+            <div class="flex justify-end p-4">
+                <button id="close-menu" class="text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col items-start p-6 space-y-4">
+                <a href="/#" class="text-[15px] text-gray-800">Inicio</a>
+                <a href="#especialistas" class="text-[15px] text-gray-800">Especialistas</a>
+                <a href="/services.html" class="text-[15px] text-gray-800">Servicios</a>
+                <a href="/about-us.html" class="text-[15px] text-gray-800">Sobre nosotros</a>
+                <a href="/contacto.html" class="text-[15px] text-gray-800">Contacto</a>
+                <a href="#"
+                    class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full px-4 py-2">
+                    Agenda tu cita
+                </a>
+            </nav>
+        </div>
+
+        <!-- Script -->
+        <script>
+            const toggle = document.getElementById('menu-toggle');
+            const close = document.getElementById('close-menu');
+            const menu = document.getElementById('mobile-menu');
+
+            toggle.addEventListener('click', () => {
+                menu.classList.remove('translate-x-full');
+            });
+
+            close.addEventListener('click', () => {
+                menu.classList.add('translate-x-full');
+            });
+        </script>
+        <style>
+            .nav-link {
+                position: relative;
+                font-size: 15px;
+                color: #374151;
+                /* gray-700 */
+                transition: color 0.3s;
+            }
+
+            .nav-link::before {
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: 2px;
+                bottom: -2px;
+                left: 0;
+                background-color: #009c6e;
+                /* color personalizado si quieres */
+                transition: width 0.3s ease-in-out;
+            }
+
+            .nav-link:hover::before {
+                width: 100%;
+            }
+        </style>
+
+    </header>
+
+    <!-- Slider -->
+    <section class="relative h-screen w-full overflow-hidden">
+        <div id="slider" class="absolute inset-0 z-0 transition-opacity duration-1000">
+            <img src="assets/slide-04.jpg" alt="Slide 1"
+                class="w-full h-full object-cover absolute inset-0 opacity-100 slider-img">
+            <img src="assets/slide-04.jpg" alt="Slide 2"
+                class="w-full h-full object-cover absolute inset-0 opacity-0 slider-img">
+            <img src="assets/slide-04.jpg" alt="Slide 3"
+                class="w-full h-full object-cover absolute inset-0 opacity-0 slider-img">
+        </div>
+
+        <!-- Formulario flotante -->
+        <div
+            class="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[90%] max-w-5xl bg-gray-400 p-6 rounded-xl shadow-lg z-10 backdrop-blur-md">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Solicita tu cita</h3>
+            <form class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <input type="text" placeholder="Nombre"
+                    class="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600" />
+                <input type="email" placeholder="Correo"
+                    class="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600" />
+                <input type="tel" placeholder="Número de celular"
+                    class="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600" />
+
+                <div class="col-span-1 md:col-span-1">
+                    <label class="block text-gray-700 mb-1">Fecha probable de cita</label>
+                    <input type="date"
+                        class="w-full rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600" />
+                </div>
+
+                <div class="col-span-1 md:col-span-1">
+                    <label class="block text-gray-700 mb-1">Especialidad</label>
+                    <select
+                        class="w-full rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600">
+                        <option>Seleccione</option>
+                        <option>Otorrinolaringología</option>
+                        <option>Audiología</option>
+                        <option>Oftalmología</option>
+                    </select>
+                </div>
+
+                <div class="col-span-1 md:col-span-1 flex items-end">
+                    <button type="submit"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded transition">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        const slides = document.querySelectorAll('.slider-img');
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((img, i) => {
+                img.classList.remove('opacity-100');
+                img.classList.add('opacity-0');
+                if (i === index) {
+                    img.classList.add('opacity-100');
+                }
+            });
+        }
+
+        function nextSlide() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        setInterval(nextSlide, 4000); // cambia cada 4 segundos
+    </script>
+
+
+    <section class="grid grid-cols-1 md:grid-cols-3 text-white text-center">
+        <!-- Otorrinolaringología -->
+        <div class="bg-[#e10074] px-6 py-16 flex flex-col items-center justify-center">
+            <img src="assets/otorrino.png" alt="Otorrinolaringología" class="w-36 h-36 mb-6" />
+            <h3 class="text-2xl font-bold mb-3">Otorrinolaringología</h3>
+            <p class="text-base mb-8 max-w-sm">
+                Con nuestro servicio de otorrinolaringología podrás encontrar el abordaje de las patologías de oídos,
+                nariz, garganta y laringe, intervenciones quirúrgicas de funcionalidad, tratamientos cosméticos y manejo
+                de urgencias de la especialidad.
+            </p>
+            <a href="/otorrinolaringología.html"
+                class="bg-white text-[#e10074] font-semibold px-6 py-2 rounded-full hover:bg-gray-100 transition">
+                Ver más
+            </a>
+        </div>
+
+        <!-- Audiología -->
+        <div class="bg-[#f58220] px-6 py-16 flex flex-col items-center justify-center">
+            <img src="assets/audio.png" alt="Audiología" class="w-36 h-36 mb-6" />
+            <h3 class="text-2xl font-bold mb-3">Audiología</h3>
+            <p class="text-base mb-8 max-w-sm">
+                Con nuestro servicio de audiología podrás encontrar el diagnóstico y tratamiento para los trastornos
+                auditivos, terapia de voz, lenguaje y deglución en el paciente pediátrico y adulto.
+            </p>
+            <a href="/audiologia.html"
+                class="bg-white text-[#f58220] font-semibold px-6 py-2 rounded-full hover:bg-orange-100 transition">
+                Ver más
+            </a>
+        </div>
+
+        <!-- Oftalmología -->
+        <div class="bg-[#009c6e] px-6 py-16 flex flex-col items-center justify-center">
+            <img src="assets/oftalmologia.png" alt="Oftalmología" class="w-36 h-36 mb-6" />
+            <h3 class="text-2xl font-bold mb-3">Oftalmología</h3>
+            <p class="text-base mb-8 max-w-sm">
+                Con nuestro servicio de oftalmología podrás encontrar el abordaje de patologías oftalmológicas,
+                procedimientos quirúrgicos, atención prioritaria y manejo de urgencias de la especialidad.
+            </p>
+            <a href="/oftalmologia.html"
+                class="bg-white text-[#009c6e] font-semibold px-6 py-2 rounded-full hover:bg-green-100 transition">
+                Ver más
+            </a>
+        </div>
+    </section>
+
+
+    <section class="bg-white py-20 px-6" id="especialistas">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-7xl mx-auto mb-12">
+                <h4 class="text-lg text-gray-500 mb-2">CMEO</h4>
+                <h2 class="text-3xl font-bold text-gray-900">Nuestros especialistas</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div
+                    class="bg-white rounded-[2rem] shadow-lg overflow-hidden flex flex-col items-center pb-8 border border-blue-100 scale-[1.05]">
+                    <img src="assets/carolina.png" alt="Dra. Carolina Campuzano" class="w-full h-auto object-contain" />
+                    <div class="text-center mt-6 px-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-1">Dra. Carolina Campuzano</h3>
+                        <p class="text-base text-gray-600 mb-6">Otorrinolaringóloga</p>
+                        <div class="flex justify-center gap-4">
+                            <a href="/carolina.html"
+                                class="bg-green-600 hover:bg-green-700 text-white text-base px-6 py-3 rounded-full font-semibold transition">
+                                Ver especialista
+                            </a>
+                            <a href="#"
+                                class="bg-blue-600 hover:bg-blue-700 text-white text-base px-6 py-3 rounded-full font-semibold transition">
+                                Agendar cita
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dra. Marcela -->
+                <div
+                    class="bg-white rounded-[2rem] shadow-lg overflow-hidden flex flex-col items-center pb-8 border border-orange-100 scale-[1.05]">
+                    <img src="assets/marcela.png" alt="Dra. Marcela Cacais" class="w-full h-auto object-contain" />
+                    <div class="text-center mt-6 px-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-1">Dra. Marcela Cacais</h3>
+                        <p class="text-base text-gray-600 mb-6">Audiología</p>
+                        <div class="flex justify-center gap-4">
+                            <a href="/marcela.html"
+                                class="bg-green-600 hover:bg-green-700 text-white text-base px-6 py-3 rounded-full font-semibold transition">
+                                Ver especialista
+                            </a>
+                            <a href="#"
+                                class="bg-blue-600 hover:bg-blue-700 text-white text-base px-6 py-3 rounded-full font-semibold transition">
+                                Agendar cita
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Edgar -->
+                <div
+                    class="bg-white rounded-[2rem] shadow-lg overflow-hidden flex flex-col items-center pb-8 border border-green-100 scale-[1.05]">
+                    <img src="assets/edgar.png" alt="Dr. Edgar Daniel" class="w-full h-auto object-contain" />
+                    <div class="text-center mt-6 px-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-1">Dr. Edgar Daniel</h3>
+                        <p class="text-base text-gray-600 mb-6">Oftalmólogo</p>
+                        <div class="flex justify-center gap-4">
+                            <a href="/daniel.html"
+                                class="bg-green-600 hover:bg-green-700 text-white text-base px-6 py-3 rounded-full font-semibold transition">
+                                Ver especialista
+                            </a>
+                            <a href="#"
+                                class="bg-blue-600 hover:bg-blue-700 text-white text-base px-6 py-3 rounded-full font-semibold transition">
+                                Agendar cita
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-white text-center px-6">
+        <h4 class="text-lg text-gray-500 mb-2">Resultados rinoplastia</h4>
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Galería antes y después</h2>
+
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Comparador -->
+            <div class="relative w-[300px] h-[400px] rounded-2xl overflow-hidden shadow-xl group bg-gray-200">
+                <!-- Imagen "Antes" (base) -->
+                <img src="assets/rino-001_01.jpg"
+                    class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" />
+
+                <!-- Imagen "Después" (recortada dinámicamente) -->
+                <div class="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+                    <img src="assets/rino-001_02.jpg" class="w-full h-full object-cover clip-target" />
+                </div>
+
+                <!-- Línea y círculo del slider -->
+                <div class="slider-line absolute top-0 left-1/2 w-1 h-full bg-white z-20 pointer-events-none"></div>
+                <div
+                    class="slider-handle absolute top-1/2 left-1/2 w-8 h-8 bg-white border-2 border-gray-400 rounded-full z-30 transform -translate-x-1/2 -translate-y-1/2 cursor-ew-resize shadow-md">
+                </div>
+            </div>
+
+            <div class="relative w-[300px] h-[400px] rounded-2xl overflow-hidden shadow-xl group bg-gray-200">
+                <!-- Imagen "Antes" (base) -->
+                <img src="assets/rino-002_01.jpg"
+                    class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" />
+
+                <!-- Imagen "Después" (recortada dinámicamente) -->
+                <div class="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+                    <img src="assets/rino-002_02.jpg" class="w-full h-full object-cover clip-target" />
+                </div>
+
+                <!-- Línea y círculo del slider -->
+                <div class="slider-line absolute top-0 left-1/2 w-1 h-full bg-white z-20 pointer-events-none"></div>
+                <div
+                    class="slider-handle absolute top-1/2 left-1/2 w-8 h-8 bg-white border-2 border-gray-400 rounded-full z-30 transform -translate-x-1/2 -translate-y-1/2 cursor-ew-resize shadow-md">
+                </div>
+            </div>
+
+            <div class="relative w-[300px] h-[400px] rounded-2xl overflow-hidden shadow-xl group bg-gray-200">
+                <!-- Imagen "Antes" (base) -->
+                <img src="assets/rino-003_02.jpg"
+                    class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" />
+
+                <!-- Imagen "Después" (recortada dinámicamente) -->
+                <div class="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+                    <img src="assets/rino-003_01.jpg" class="w-full h-full object-cover clip-target" />
+                </div>
+
+                <!-- Línea y círculo del slider -->
+                <div class="slider-line absolute top-0 left-1/2 w-1 h-full bg-white z-20 pointer-events-none"></div>
+                <div
+                    class="slider-handle absolute top-1/2 left-1/2 w-8 h-8 bg-white border-2 border-gray-400 rounded-full z-30 transform -translate-x-1/2 -translate-y-1/2 cursor-ew-resize shadow-md">
+                </div>
+            </div>
+
+            <div class="relative w-[300px] h-[400px] rounded-2xl overflow-hidden shadow-xl group bg-gray-200">
+                <!-- Imagen "Antes" (base) -->
+                <img src="assets/rino-004_02.jpg"
+                    class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" />
+
+                <!-- Imagen "Después" (recortada dinámicamente) -->
+                <div class="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+                    <img src="assets/rino-004_01.jpg" class="w-full h-full object-cover clip-target" />
+                </div>
+
+                <!-- Línea y círculo del slider -->
+                <div class="slider-line absolute top-0 left-1/2 w-1 h-full bg-white z-20 pointer-events-none"></div>
+                <div
+                    class="slider-handle absolute top-1/2 left-1/2 w-8 h-8 bg-white border-2 border-gray-400 rounded-full z-30 transform -translate-x-1/2 -translate-y-1/2 cursor-ew-resize shadow-md">
+                </div>
+            </div>
+        </div>
+        <style>
+            .clip-target {
+                clip-path: inset(0 50% 0 0);
+                /* muestra mitad izquierda inicialmente */
+                transition: clip-path 0.0s;
+            }
+        </style>
+        <script>
+            document.querySelectorAll('.group').forEach(container => {
+                const clipImage = container.querySelector('.clip-target');
+                const handle = container.querySelector('.slider-handle');
+                const line = container.querySelector('.slider-line');
+
+                let isDragging = false;
+
+                const move = (clientX, rect) => {
+                    let x = clientX - rect.left;
+                    x = Math.max(0, Math.min(x, rect.width));
+                    const percentage = (x / rect.width) * 100;
+                    clipImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+                    handle.style.left = `${x}px`;
+                    line.style.left = `${x}px`;
+                };
+
+                handle.addEventListener('mousedown', () => isDragging = true);
+                window.addEventListener('mouseup', () => isDragging = false);
+                container.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    const rect = container.getBoundingClientRect();
+                    move(e.clientX, rect);
+                });
+
+                // Touch support
+                handle.addEventListener('touchstart', () => isDragging = true);
+                window.addEventListener('touchend', () => isDragging = false);
+                container.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    const rect = container.getBoundingClientRect();
+                    move(e.touches[0].clientX, rect);
+                });
+            });
+        </script>
+
+    </section>
+
+
+    <section class="bg-gray-50 py-20 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Certificaciones profesionales</h2>
+            <p class="text-gray-600 text-lg mb-12">
+                Nuestros especialistas cuentan con avales oficiales que respaldan su formación y experiencia.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col items-center text-center hover:-translate-y-1 transform">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12l2 2l4 -4m1 -5H7a2 2 0 0 0 -2 2v14l7 -3l7 3V5a2 2 0 0 0 -2 -2z" />
+                        </svg>
+                    </div>
+                    <img src="assets/certificado-otorrino.png" alt="Certificado Otorrino"
+                        class="rounded-lg shadow-sm w-full h-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Otorrinolaringología</h3>
+
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col items-center text-center hover:-translate-y-1 transform">
+                    <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12l2 2l4 -4m1 -5H7a2 2 0 0 0 -2 2v14l7 -3l7 3V5a2 2 0 0 0 -2 -2z" />
+                        </svg>
+                    </div>
+                    <img src="assets/certificado-audio.png" alt="Certificado Audiología"
+                        class="rounded-lg shadow-sm w-full h-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Audiología</h3>
+
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col items-center text-center hover:-translate-y-1 transform">
+                    <div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12l2 2l4 -4m1 -5H7a2 2 0 0 0 -2 2v14l7 -3l7 3V5a2 2 0 0 0 -2 -2z" />
+                        </svg>
+                    </div>
+                    <img src="assets/certificado-oftalmo.png" alt="Certificado Oftalmología"
+                        class="rounded-lg shadow-sm w-full h-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Oftalmología</h3>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-[#eaf4f9] text-gray-800 pt-16 pb-6 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+            <!-- Logo + Contacto -->
+            <div class="col-span-1 flex flex-col gap-4 items-start">
+                <img src="assets/logo.png" alt="Logo" class="w-48 mb-2" />
+                <div class="flex items-center text-sm">
+                    <svg class="w-4 h-4 mr-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16 12H8m8 0a4 4 0 1 0-8 0a4 4 0 1 0 8 0zm2 0a6 6 0 1 0-12 0a6 6 0 1 0 12 0z" />
+                    </svg>
+                    especialistasenoriente@gmail.com
+                </div>
+                <div class="flex items-center text-sm">
+                    <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.52 17.31l-4.62-1.94a1 1 0 0 0-1 .26l-2 2a15.05 15.05 0 0 1-7.1-7.1l2-2a1 1 0 0 0 .26-1L6.69 3.48A1 1 0 0 0 5.72 3H4a1 1 0 0 0-1 1A17 17 0 0 0 20 20a1 1 0 0 0 1-1v-1.72a1 1 0 0 0-.48-.97z" />
+                    </svg>
+                    3502217249
+                </div>
+                <div class="flex items-center text-sm">
+                    <svg class="w-4 h-4 mr-2 text-blue-600" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 5h2l3.6 7.59L5.25 16.04a1 1 0 0 0 .75 1.66h12a1 1 0 0 0 .75-1.66l-3.35-3.45L19 5H3z" />
+                    </svg>
+                    3502217249 - 3224148773
+                </div>
+            </div>
+
+            <!-- Corporativo -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3 border-b border-gray-300 inline-block">Corporativo</h3>
+                <ul class="text-sm space-y-2 mt-2">
+                    <li><a href="#" class="hover:text-green-700 transition">Inicio</a></li>
+                    <li><a href="#especialistas" class="hover:text-green-700 transition">Especialistas</a></li>
+                    <li><a href="#" class="hover:text-green-700 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-green-700 transition">Servicios</a></li>
+                    <li><a href="#" class="hover:text-green-700 transition">Sobre nosotros</a></li>
+                    <li><a href="#" class="hover:text-green-700 transition">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Información del sitio -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3 border-b border-gray-300 inline-block">Información del sitio</h3>
+                <ul class="text-sm space-y-2 mt-2">
+                    <li><a href="#" class="hover:text-green-700 transition">Términos y condiciones</a></li>
+                    <li><a href="#" class="hover:text-green-700 transition">Aviso de privacidad</a></li>
+                    <li><a href="#" class="hover:text-green-700 transition">Política de tratamiento de datos</a></li>
+                    <li><a href="#" class="hover:text-green-700 transition">PQRS</a></li>
+                </ul>
+            </div>
+
+            <!-- Cómo llegar -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3 border-b border-gray-300 inline-block">Cómo llegar</h3>
+                <div class="flex flex-col gap-3 mt-4">
+                    <a href="https://maps.google.com" target="_blank"
+                        class="bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                        Ver en Google Maps
+                    </a>
+                    <a href="https://waze.com" target="_blank"
+                        class="bg-green-600 text-white text-sm px-4 py-2 rounded-md hover:bg-green-700 transition">
+                        Ver en Waze
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Línea inferior -->
+        <div class="border-t border-gray-300 mt-12 pt-4 text-center text-sm text-gray-500">
+            Todos los derechos reservados © CMEO Especialistas - 2025
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
