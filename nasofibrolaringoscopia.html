@@ -16,101 +16,136 @@
 
 <body>
 
-    <header class="bg-white shadow-md fixed top-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="/" class="flex-shrink-0">
-                    <img src="assets/logo.png" alt="Logo" class="h-[4rem] w-auto" />
-                </a>
+        <header class="bg-white shadow-md fixed top-0 w-full z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <a href="/" class="flex-shrink-0">
+            <img src="assets/logo.png" alt="Logo" class="h-[4rem] w-auto" />
+          </a>
 
-                <!-- Menú Desktop -->
-                <nav class="hidden md:flex space-x-6 items-center">
-                    <a href="/#" class="nav-link">Inicio</a>
-                    <a href="#especialistas" class="nav-link">Especialistas</a>
-                    <a href="/services.html" class="nav-link">Servicios</a>
-                    <a href="/about-us.html" class="nav-link">Sobre nosotros</a>
-                    <a href="/contacto.html" class="nav-link">Contacto</a>
-                    <a href=""
-                        class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition">
-                        Agenda tu cita
-                    </a>
-                </nav>
+          <!-- Menú Desktop -->
+          <nav class="hidden md:flex space-x-6 items-center">
+            <a href="/#" class="nav-link">Inicio</a>
+            <a href="#especialistas" class="nav-link">Especialistas</a>
+            <a href="/cmeo-web/services.html" class="nav-link">Servicios</a>
+            <a href="/cmeo-web/about-us.html" class="nav-link"
+              >Sobre nosotros</a
+            >
+            <a href="/cmeo-web/contacto.html" class="nav-link">Contacto</a>
+            <a
+              href=""
+              class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition"
+            >
+              Agenda tu cita
+            </a>
+          </nav>
 
-                <!-- Botón menú móvil -->
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+          <!-- Botón menú móvil -->
+          <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- Menú Móvil Desplegable -->
-        <div id="mobile-menu"
-            class="md:hidden fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
-            <div class="flex justify-end p-4">
-                <button id="close-menu" class="text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <nav class="flex flex-col items-start p-6 space-y-4">
-                <a href="/#" class="text-[15px] text-gray-800">Inicio</a>
-                <a href="#especialistas" class="text-[15px] text-gray-800">Especialistas</a>
-                <a href="/services.html" class="text-[15px] text-gray-800">Servicios</a>
-                <a href="/about-us.html" class="text-[15px] text-gray-800">Sobre nosotros</a>
-                <a href="/contacto.html" class="text-[15px] text-gray-800">Contacto</a>
-                <a href="#"
-                    class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full px-4 py-2">
-                    Agenda tu cita
-                </a>
-            </nav>
+      <!-- Menú Móvil Desplegable -->
+      <div
+        id="mobile-menu"
+        class="md:hidden fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50"
+      >
+        <div class="flex justify-end p-4">
+          <button id="close-menu" class="text-gray-700">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
+        <nav class="flex flex-col items-start p-6 space-y-4">
+          <a href="/#" class="text-[15px] text-gray-800">Inicio</a>
+          <a href="#especialistas" class="text-[15px] text-gray-800"
+            >Especialistas</a
+          >
+          <a href="/cmeo-web/services.html" class="text-[15px] text-gray-800"
+            >Servicios</a
+          >
+          <a href="/cmeo-web/about-us.html" class="text-[15px] text-gray-800"
+            >Sobre nosotros</a
+          >
+          <a href="/cmeo-web/contacto.html" class="text-[15px] text-gray-800"
+            >Contacto</a
+          >
+          <a
+            href="#"
+            class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full px-4 py-2"
+          >
+            Agenda tu cita
+          </a>
+        </nav>
+      </div>
 
-        <!-- Script -->
-        <script>
-            const toggle = document.getElementById('menu-toggle');
-            const close = document.getElementById('close-menu');
-            const menu = document.getElementById('mobile-menu');
+      <!-- Script -->
+      <script>
+        const toggle = document.getElementById("menu-toggle");
+        const close = document.getElementById("close-menu");
+        const menu = document.getElementById("mobile-menu");
 
-            toggle.addEventListener('click', () => {
-                menu.classList.remove('translate-x-full');
-            });
+        toggle.addEventListener("click", () => {
+          menu.classList.remove("translate-x-full");
+        });
 
-            close.addEventListener('click', () => {
-                menu.classList.add('translate-x-full');
-            });
-        </script>
-        <style>
-            .nav-link {
-                position: relative;
-                font-size: 15px;
-                color: #374151;
-                /* gray-700 */
-                transition: color 0.3s;
-            }
+        close.addEventListener("click", () => {
+          menu.classList.add("translate-x-full");
+        });
+      </script>
+      <style>
+        .nav-link {
+          position: relative;
+          font-size: 15px;
+          color: #374151;
+          /* gray-700 */
+          transition: color 0.3s;
+        }
 
-            .nav-link::before {
-                content: "";
-                position: absolute;
-                width: 0%;
-                height: 2px;
-                bottom: -2px;
-                left: 0;
-                background-color: #009c6e;
-                /* color personalizado si quieres */
-                transition: width 0.3s ease-in-out;
-            }
+        .nav-link::before {
+          content: "";
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          bottom: -2px;
+          left: 0;
+          background-color: #009c6e;
+          /* color personalizado si quieres */
+          transition: width 0.3s ease-in-out;
+        }
 
-            .nav-link:hover::before {
-                width: 100%;
-            }
-        </style>
-
+        .nav-link:hover::before {
+          width: 100%;
+        }
+      </style>
     </header>
 
     <section class="bg-[#f9f9f9] py-16 px-6">
@@ -194,79 +229,157 @@
 
 
     <footer class="bg-[#eaf4f9] text-gray-800 pt-16 pb-6 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-            <!-- Logo + Contacto -->
-            <div class="col-span-1 flex flex-col gap-4 items-start">
-                <img src="assets/logo.png" alt="Logo" class="w-48 mb-2" />
-                <div class="flex items-center text-sm">
-                    <svg class="w-4 h-4 mr-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M16 12H8m8 0a4 4 0 1 0-8 0a4 4 0 1 0 8 0zm2 0a6 6 0 1 0-12 0a6 6 0 1 0 12 0z" />
-                    </svg>
-                    especialistasenoriente@gmail.com
-                </div>
-                <div class="flex items-center text-sm">
-                    <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M20.52 17.31l-4.62-1.94a1 1 0 0 0-1 .26l-2 2a15.05 15.05 0 0 1-7.1-7.1l2-2a1 1 0 0 0 .26-1L6.69 3.48A1 1 0 0 0 5.72 3H4a1 1 0 0 0-1 1A17 17 0 0 0 20 20a1 1 0 0 0 1-1v-1.72a1 1 0 0 0-.48-.97z" />
-                    </svg>
-                    3502217249
-                </div>
-                <div class="flex items-center text-sm">
-                    <svg class="w-4 h-4 mr-2 text-blue-600" fill="none" stroke="currentColor" stroke-width="2"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M3 5h2l3.6 7.59L5.25 16.04a1 1 0 0 0 .75 1.66h12a1 1 0 0 0 .75-1.66l-3.35-3.45L19 5H3z" />
-                    </svg>
-                    3502217249 - 3224148773
-                </div>
-            </div>
-
-            <!-- Corporativo -->
-            <div>
-                <h3 class="text-lg font-semibold mb-3 border-b border-gray-300 inline-block">Corporativo</h3>
-                <ul class="text-sm space-y-2 mt-2">
-                    <li><a href="#" class="hover:text-green-700 transition">Inicio</a></li>
-                    <li><a href="#especialistas" class="hover:text-green-700 transition">Especialistas</a></li>
-                    <li><a href="#" class="hover:text-green-700 transition">Blog</a></li>
-                    <li><a href="#" class="hover:text-green-700 transition">Servicios</a></li>
-                    <li><a href="#" class="hover:text-green-700 transition">Sobre nosotros</a></li>
-                    <li><a href="#" class="hover:text-green-700 transition">Contacto</a></li>
-                </ul>
-            </div>
-
-            <!-- Información del sitio -->
-            <div>
-                <h3 class="text-lg font-semibold mb-3 border-b border-gray-300 inline-block">Información del sitio</h3>
-                <ul class="text-sm space-y-2 mt-2">
-                    <li><a href="#" class="hover:text-green-700 transition">Términos y condiciones</a></li>
-                    <li><a href="#" class="hover:text-green-700 transition">Aviso de privacidad</a></li>
-                    <li><a href="#" class="hover:text-green-700 transition">Política de tratamiento de datos</a></li>
-                    <li><a href="#" class="hover:text-green-700 transition">PQRS</a></li>
-                </ul>
-            </div>
-
-            <!-- Cómo llegar -->
-            <div>
-                <h3 class="text-lg font-semibold mb-3 border-b border-gray-300 inline-block">Cómo llegar</h3>
-                <div class="flex flex-col gap-3 mt-4">
-                    <a href="https://maps.google.com" target="_blank"
-                        class="bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                        Ver en Google Maps
-                    </a>
-                    <a href="https://waze.com" target="_blank"
-                        class="bg-green-600 text-white text-sm px-4 py-2 rounded-md hover:bg-green-700 transition">
-                        Ver en Waze
-                    </a>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        <!-- Logo + Contacto -->
+        <div class="col-span-1 flex flex-col gap-4 items-start">
+          <img src="assets/logo.png" alt="Logo" class="w-48 mb-2" />
+          <div class="flex items-center text-sm">
+            <svg
+              class="w-4 h-4 mr-2 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16 12H8m8 0a4 4 0 1 0-8 0a4 4 0 1 0 8 0zm2 0a6 6 0 1 0-12 0a6 6 0 1 0 12 0z"
+              />
+            </svg>
+            especialistasenoriente@gmail.com
+          </div>
+          <div class="flex items-center text-sm">
+            <svg
+              class="w-4 h-4 mr-2 text-green-600"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20.52 17.31l-4.62-1.94a1 1 0 0 0-1 .26l-2 2a15.05 15.05 0 0 1-7.1-7.1l2-2a1 1 0 0 0 .26-1L6.69 3.48A1 1 0 0 0 5.72 3H4a1 1 0 0 0-1 1A17 17 0 0 0 20 20a1 1 0 0 0 1-1v-1.72a1 1 0 0 0-.48-.97z"
+              />
+            </svg>
+            3502217249
+          </div>
+          <div class="flex items-center text-sm">
+            <svg
+              class="w-4 h-4 mr-2 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 5h2l3.6 7.59L5.25 16.04a1 1 0 0 0 .75 1.66h12a1 1 0 0 0 .75-1.66l-3.35-3.45L19 5H3z"
+              />
+            </svg>
+            3502217249 - 3224148773
+          </div>
         </div>
 
-        <!-- Línea inferior -->
-        <div class="border-t border-gray-300 mt-12 pt-4 text-center text-sm text-gray-500">
-            Todos los derechos reservados © CMEO Especialistas - 2025
+        <!-- Corporativo -->
+        <div>
+          <h3
+            class="text-lg font-semibold mb-3 border-b border-gray-300 inline-block"
+          >
+            Corporativo
+          </h3>
+          <ul class="text-sm space-y-2 mt-2">
+            <li>
+              <a href="#" class="hover:text-green-700 transition">Inicio</a>
+            </li>
+            <li>
+              <a href="#especialistas" class="hover:text-green-700 transition"
+                >Especialistas</a
+              >
+            </li>
+            <li>
+              <a
+                href="/cmeo-web/services.html"
+                class="hover:text-green-700 transition"
+                >Servicios</a
+              >
+            </li>
+            <li>
+              <a
+                href="/cmeo-web/about-us.html"
+                class="hover:text-green-700 transition"
+                >Sobre nosotros</a
+              >
+            </li>
+            <li>
+              <a
+                href="/cmeo-web/contacto.html"
+                class="hover:text-green-700 transition"
+                >Contacto</a
+              >
+            </li>
+          </ul>
         </div>
+
+        <!-- Información del sitio -->
+        <div>
+          <h3
+            class="text-lg font-semibold mb-3 border-b border-gray-300 inline-block"
+          >
+            Información del sitio
+          </h3>
+          <ul class="text-sm space-y-2 mt-2">
+            <li>
+              <a href="#" class="hover:text-green-700 transition"
+                >Términos y condiciones</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-green-700 transition"
+                >Aviso de privacidad</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-green-700 transition"
+                >Política de tratamiento de datos</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-green-700 transition">PQRS</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cómo llegar -->
+        <div>
+          <h3
+            class="text-lg font-semibold mb-3 border-b border-gray-300 inline-block"
+          >
+            Cómo llegar
+          </h3>
+          <div class="flex flex-col gap-3 mt-4">
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              class="bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition"
+            >
+              Ver en Google Maps
+            </a>
+            <a
+              href="https://waze.com"
+              target="_blank"
+              class="bg-green-600 text-white text-sm px-4 py-2 rounded-md hover:bg-green-700 transition"
+            >
+              Ver en Waze
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Línea inferior -->
+      <div
+        class="border-t border-gray-300 mt-12 pt-4 text-center text-sm text-gray-500"
+      >
+        Todos los derechos reservados © CMEO Especialistas - 2025
+      </div>
     </footer>
 
 
